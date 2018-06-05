@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    const STATE_ACTIVE = 'active';
+    const STATE_NON_ACTIVE = 'non active';
     use Notifiable;
 
     /**
@@ -15,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'email', 'first_name', 'last_name', 'group_id', 'state'
     ];
 
     /**
