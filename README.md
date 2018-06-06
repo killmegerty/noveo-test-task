@@ -26,3 +26,15 @@ $ php artisan migrate:fresh --seed
 ```sh
 $ vendor/bin/phpunit
 ```
+
+#Роуты
+
+GET /api/users - list of users
+GET /api/users/{id} - user info
+POST /api/users - create user
+PATCH /api/users/{id} - update user
+
+GET /api/groups - list of groups
+GET /api/groups/{id} - group info
+POST /api/groups - create group
+PATCH /api/groups/{id} - update group
