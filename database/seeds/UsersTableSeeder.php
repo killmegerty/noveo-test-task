@@ -13,35 +13,13 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $states = [User::STATE_ACTIVE, User::STATE_NON_ACTIVE];
-        $usersNames = [
-            'Arden Vanloan',
-            'Chance Odem',
-            'Janise Hoefer',
-            'Laura Spargo',
-            'Flavia Mahi',
-            'Marcellus Mcfee',
-            'Lashon Cruz',
-            'Aja Christner',
-            'Jamar Cardenas',
-            'Milly Belvin',
-            'Jone Leonard',
-            'Travis Torgerson',
-            'Esther Baer',
-            'Belinda Hulet',
-            'Harriett Davenport',
-            'Alise Mickley',
-            'Tisha Santibanez',
-            'In Yin',
-            'Tonie Compos',
-            'Lacy Rehder'
-        ];
+        $faker = \Faker\Factory::create();
 
-        foreach ($usersNames as $userName) {
-            $explodedUserName = explode(' ', $userName);
+        for ($i = 0; $i < 15; $i++) {
             User::create([
-                'email' => str_random(10).'@gmail.com',
-                'first_name' => $explodedUserName[0],
-                'last_name' => $explodedUserName[1],
+                'email' => $faker->email,
+                'first_name' => $faker->firstName,
+                'last_name' => $faker->lastName,
                 'group_id' => rand(1, 3),
                 'state' => $states[array_rand($states)]
             ]);
